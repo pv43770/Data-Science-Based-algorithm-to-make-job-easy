@@ -1,0 +1,29 @@
+This Python code defines a function named `value_imputation` that performs imputation on a dataset to handle missing values and outliers for specified numeric columns. Here's a breakdown of what the code does:
+
+1. **Function Definition**: 
+    - The function `value_imputation` takes four parameters: `dataset`, `lower_outlier`, `upper_outlier`, and `columns`.
+
+2. **Processing Columns**:
+    - The function iterates through each column specified in the `columns` list.
+
+3. **Handling Numeric Columns**:
+    - For each numeric column, it checks if the column's data type is either `float64` or `int64`.
+    - If the column is numeric, it proceeds to check for missing values or outliers.
+
+4. **Imputation**:
+    - If missing values or outliers are detected in the column:
+        - Outliers are replaced with the median value of the column.
+        - Missing values are filled with the mean of the column.
+
+5. **Handling Categorical Columns**:
+    - If a column is not numeric (i.e., categorical), it prints a message indicating that it's a categorical column and advises entering a numerical column.
+
+6. **Returning Processed Dataset**:
+    - Finally, the function returns the modified dataset.
+
+7. **Example Usage**:
+    - The code demonstrates the usage of the `value_imputation` function on a dataset loaded from a CSV file (`marks.csv`) using pandas.
+    - It specifies the columns to process (`math_score`, `reading_score`, `writing_score`).
+    - It then applies the `value_imputation` function to the dataset with specified lower and upper outlier thresholds (`0` and `100` respectively), and stores the resulting dataset in a variable named `Filled_Data`.
+
+This code is useful for pre-processing numerical data by imputing missing values and handling outliers to ensure the dataset is ready for further analysis or modeling.
